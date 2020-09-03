@@ -32,4 +32,5 @@ object OkHttp {
    * [semver]: https://semver.org
    */
   const val VERSION = "$projectVersion"
+  println("Hello")
 }
