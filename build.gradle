@@ -120,6 +120,16 @@ subprojects { project ->
   apply plugin: 'net.ltgt.errorprone'
   apply plugin: 'org.jetbrains.dokka'
   apply plugin: 'com.diffplug.gradle.spotless'
+  apply plugin: "findbugs"
+  
+  findbugs {
+   ignoreFailures = true
+   toolVersion = "3.0.0"
+   sourceSets = [sourceSets.main]
+   reportsDir = file("$project.buildDir/reports/findbugs")
+   effort = "max"
+  }
+  
   sourceCompatibility = JavaVersion.VERSION_1_8
   targetCompatibility = JavaVersion.VERSION_1_8
 
